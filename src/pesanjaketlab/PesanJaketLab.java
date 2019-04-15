@@ -15,6 +15,8 @@ public class PesanJaketLab {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ParentPage Parent = new ParentPage();
+        Parent.setVisible(true);
         // TODO code application logic here
     }
     
