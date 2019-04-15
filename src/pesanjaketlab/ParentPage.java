@@ -783,7 +783,7 @@ public class ParentPage extends javax.swing.JFrame {
 
     private void Home1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Home1MouseReleased
         // TODO add your handling code here:
-        Home1.setBackground(new Color(204,204,204));
+        Home1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_Home1MouseReleased
 
     private void Pesan1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pesan1MousePressed
@@ -793,7 +793,7 @@ public class ParentPage extends javax.swing.JFrame {
 
     private void Pesan1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pesan1MouseReleased
         // TODO add your handling code here:
-        Pesan1.setBackground(new Color(204,204,204));
+        Pesan1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_Pesan1MouseReleased
 
     private void Keranjang1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Keranjang1MousePressed
@@ -803,7 +803,7 @@ public class ParentPage extends javax.swing.JFrame {
 
     private void Keranjang1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Keranjang1MouseReleased
         // TODO add your handling code here:
-        Keranjang1.setBackground(new Color(204,204,204));
+        Keranjang1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_Keranjang1MouseReleased
 
     private void AboutUs1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUs1MousePressed
@@ -813,7 +813,7 @@ public class ParentPage extends javax.swing.JFrame {
 
     private void AboutUs1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUs1MouseReleased
         // TODO add your handling code here:
-        AboutUs1.setBackground(new Color(204,204,204));
+        AboutUs1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_AboutUs1MouseReleased
 
     /**
