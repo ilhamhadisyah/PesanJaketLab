@@ -17,6 +17,10 @@ public class PesanJaketLab {
     public static void main(String[] args) {
         ParentPage Parent = new ParentPage();
         Parent.setVisible(true);
+        Login login = new Login();
+        //login.setVisible(true);
+        Register reg = new Register();
+        //reg.setVisible(true);
         // TODO code application logic here
     }
     
