@@ -23,12 +23,15 @@ public class Register extends javax.swing.JFrame {
         PIC.setText("PIC");
         PhoneNumber.setText("Nomor HP");
         Email.setText("Email");
+        daftar.requestFocus();
         
         FullName.setForeground(new Color(204,204,204));
         NIM.setForeground(new Color(204,204,204));
         PIC.setForeground(new Color(204,204,204));
         PhoneNumber.setForeground(new Color(204,204,204));
         Email.setForeground(new Color(204,204,204));
+        
+        this.setLocationRelativeTo(this);
         
         
     }
@@ -56,7 +59,7 @@ public class Register extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        jPanel5 = new javax.swing.JPanel();
+        daftar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -89,6 +92,14 @@ public class Register extends javax.swing.JFrame {
 
         FullName.setText("Nama Lengkap");
         FullName.setBorder(null);
+        FullName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FullNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FullNameFocusLost(evt);
+            }
+        });
         FullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FullNameActionPerformed(evt);
@@ -97,34 +108,80 @@ public class Register extends javax.swing.JFrame {
 
         NIM.setText("NIM");
         NIM.setBorder(null);
-        NIM.setPreferredSize(new java.awt.Dimension(20, 14));
+        NIM.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                NIMFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                NIMFocusLost(evt);
+            }
+        });
 
         PIC.setText("PIC");
         PIC.setBorder(null);
+        PIC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PICFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PICFocusLost(evt);
+            }
+        });
 
         PhoneNumber.setText("No. Telepon");
         PhoneNumber.setBorder(null);
+        PhoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PhoneNumberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PhoneNumberFocusLost(evt);
+            }
+        });
 
         Email.setText("Email");
         Email.setBorder(null);
+        Email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                EmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EmailFocusLost(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Create Account");
 
+        daftar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                daftarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                daftarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                daftarMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                daftarMouseReleased(evt);
+            }
+        });
+
         jLabel3.setText("Daftar");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout daftarLayout = new javax.swing.GroupLayout(daftar);
+        daftar.setLayout(daftarLayout);
+        daftarLayout.setHorizontalGroup(
+            daftarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftarLayout.createSequentialGroup()
                 .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(31, 31, 31))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        daftarLayout.setVerticalGroup(
+            daftarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(daftarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,7 +201,7 @@ public class Register extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(FullName, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                            .addComponent(NIM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NIM)
                             .addComponent(PIC)
                             .addComponent(PhoneNumber)
                             .addComponent(Email)
@@ -155,7 +212,7 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(jSeparator5)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(daftar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -175,7 +232,7 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(PIC, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,8 +240,8 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                .addComponent(daftar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -206,6 +263,106 @@ public class Register extends javax.swing.JFrame {
     private void FullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FullNameActionPerformed
+
+    private void daftarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseEntered
+        // TODO add your handling code here:
+        daftar.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_daftarMouseEntered
+
+    private void daftarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseExited
+        // TODO add your handling code here:
+        daftar.setBackground(new Color(240,240,240));
+    }//GEN-LAST:event_daftarMouseExited
+
+    private void daftarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMousePressed
+        // TODO add your handling code here:
+        daftar.setBackground(new Color(153,153,153));
+    }//GEN-LAST:event_daftarMousePressed
+
+    private void daftarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseReleased
+        // TODO add your handling code here:
+        daftar.setBackground(new Color(204,204,204));
+    }//GEN-LAST:event_daftarMouseReleased
+
+    private void FullNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullNameFocusGained
+        // TODO add your handling code here:
+        if(FullName.getText().equals("Nama Lengkap")){
+        FullName.setText("");
+        FullName.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_FullNameFocusGained
+
+    private void NIMFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NIMFocusGained
+        // TODO add your handling code here:
+        if(NIM.getText().equals("NIM")){
+        NIM.setText("");
+        NIM.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_NIMFocusGained
+
+    private void PICFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PICFocusGained
+        // TODO add your handling code here:
+        if(PIC.getText().equals("PIC")){
+        PIC.setText("");
+        PIC.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_PICFocusGained
+
+    private void PhoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNumberFocusGained
+        // TODO add your handling code here:
+        if(PhoneNumber.getText().equals("Nomor HP")){
+        PhoneNumber.setText("");
+        PhoneNumber.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_PhoneNumberFocusGained
+
+    private void EmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusGained
+        // TODO add your handling code here:
+        if(Email.getText().equals("Email")){
+        Email.setText("");
+        Email.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_EmailFocusGained
+
+    private void FullNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FullNameFocusLost
+        // TODO add your handling code here:
+        if(FullName.getText().isEmpty()){
+            FullName.setText("Nama Lengkap");
+            FullName.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_FullNameFocusLost
+
+    private void NIMFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_NIMFocusLost
+        // TODO add your handling code here:
+        if(NIM.getText().isEmpty()){
+            NIM.setText("NIM");
+            NIM.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_NIMFocusLost
+
+    private void PICFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PICFocusLost
+        // TODO add your handling code here:
+        if(PIC.getText().isEmpty()){
+            PIC.setText("PIC");
+            PIC.setForeground(new Color(204,204,204));    
+        }
+    }//GEN-LAST:event_PICFocusLost
+
+    private void PhoneNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PhoneNumberFocusLost
+        // TODO add your handling code here:
+        if(PhoneNumber.getText().isEmpty()){
+            PhoneNumber.setText("Nomor HP");
+            PhoneNumber.setForeground(new Color(204,204,204));    
+        }
+    }//GEN-LAST:event_PhoneNumberFocusLost
+
+    private void EmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailFocusLost
+        // TODO add your handling code here:
+        if(Email.getText().isEmpty()){
+            Email.setText("Email");
+            Email.setForeground(new Color(204,204,204));    
+        }
+    }//GEN-LAST:event_EmailFocusLost
 
     /**
      * @param args the command line arguments
@@ -248,12 +405,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField NIM;
     private javax.swing.JTextField PIC;
     private javax.swing.JTextField PhoneNumber;
+    private javax.swing.JPanel daftar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

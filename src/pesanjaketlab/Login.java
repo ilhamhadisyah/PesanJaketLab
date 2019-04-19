@@ -120,6 +120,9 @@ public class Login extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 PasswordFieldFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordFieldFocusLost(evt);
+            }
         });
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +166,9 @@ public class Login extends javax.swing.JFrame {
         GoToRegister.setForeground(new java.awt.Color(51, 51, 255));
         GoToRegister.setText("Click here");
         GoToRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GoToRegisterMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 GoToRegisterMouseEntered(evt);
             }
@@ -253,8 +259,10 @@ public class Login extends javax.swing.JFrame {
 
     private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
         // TODO add your handling code here:
+        if(UsernameField.getText().equals("NIM/Username")){
         UsernameField.setText("");
         UsernameField.setForeground(Color.black);
+        }
     }//GEN-LAST:event_UsernameFieldFocusGained
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
@@ -263,9 +271,11 @@ public class Login extends javax.swing.JFrame {
 
     private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained
         // TODO add your handling code here:
+        if(PasswordField.getText().equals("PIC/Password")){
         PasswordField.setText("");
         PasswordField.setForeground(Color.black);
         PasswordField.setEchoChar(('*'));
+        }
       
     }//GEN-LAST:event_PasswordFieldFocusGained
 
@@ -278,6 +288,12 @@ public class Login extends javax.swing.JFrame {
 
     private void UsernameFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusLost
         // TODO add your handling code here:
+        invalidate();
+        if(UsernameField.getText().isEmpty()){
+            UsernameField.setText("NIM/Username");
+            UsernameField.setForeground(new Color(204,204,204));    
+        }
+        
         
     }//GEN-LAST:event_UsernameFieldFocusLost
 
@@ -321,6 +337,22 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         GoToRegister.setForeground(new Color(51,51,255));
     }//GEN-LAST:event_GoToRegisterMouseExited
+
+    private void GoToRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToRegisterMouseClicked
+        // TODO add your handling code here:
+        Register reg = new Register();
+        reg.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_GoToRegisterMouseClicked
+
+    private void PasswordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusLost
+        // TODO add your handling code here:
+        if(PasswordField.getText().isEmpty()){
+            PasswordField.setText("PIC/Password");
+            PasswordField.setEchoChar((char)0);
+            PasswordField.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_PasswordFieldFocusLost
 
     /**
      * @param args the command line arguments
