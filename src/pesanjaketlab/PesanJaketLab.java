@@ -19,7 +19,7 @@ public class PesanJaketLab {
         Parent.setVisible(true);
         Login login = new Login();
         //login.setVisible(true);
-        Register reg = new Register();
+        //Register reg = new Register();
         //reg.setVisible(true);
         // TODO code application logic here
     }

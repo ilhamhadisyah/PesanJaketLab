@@ -25,18 +25,7 @@ public class ParentPage extends javax.swing.JFrame {
         
         setLocationRelativeTo(this);
         setExtendedState(ParentPage.MAXIMIZED_BOTH);
-        AboutUsPane.setVisible(false);
-        KeranjangPane.setVisible(false);
-        PesanPane.setVisible(false);
-        HomePane.setVisible(true);
-        AboutUs.setBackground(Color.white);
-        Keranjang.setBackground(Color.white);
-        Pesan.setBackground(Color.white);
-        Home.setBackground(new Color(0,153,0));
-        HomeWord.setForeground(Color.black);
-        PesanWord.setForeground(new Color(77, 77,77));
-        KeranjangWord.setForeground(new Color(77, 77,77));
-        AboutUsWord.setForeground(new Color(77, 77,77));
+        ToHomepage();
     }
 
     /**
@@ -277,6 +266,17 @@ public class ParentPage extends javax.swing.JFrame {
         jLabel11.setText("home");
 
         jPanel9.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel9MouseExited(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -792,6 +792,15 @@ public class ParentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeMouseClicked
 
     private void AboutUs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUs1MouseClicked
+        
+        ToAboutPage();
+        
+    }//GEN-LAST:event_AboutUs1MouseClicked
+
+   
+        
+    
+    public void ToAboutPage() {
         // TODO add your handling code here:
         AboutUsPane.setVisible(true);
         KeranjangPane.setVisible(false);
@@ -805,10 +814,13 @@ public class ParentPage extends javax.swing.JFrame {
         PesanWord.setForeground(new Color(77, 77,77));
         KeranjangWord.setForeground(new Color(77, 77,77));
         AboutUsWord.setForeground(Color.black);
-        
-    }//GEN-LAST:event_AboutUs1MouseClicked
+    }
 
     private void Keranjang1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Keranjang1MouseClicked
+        ToKeranjangPage();
+    }//GEN-LAST:event_Keranjang1MouseClicked
+
+    public void ToKeranjangPage() {
         // TODO add your handling code here:
         AboutUsPane.setVisible(false);
         KeranjangPane.setVisible(true);
@@ -823,9 +835,15 @@ public class ParentPage extends javax.swing.JFrame {
         PesanWord.setForeground(new Color(77, 77,77));
         KeranjangWord.setForeground(Color.black);
         AboutUsWord.setForeground(new Color(77, 77,77));
-    }//GEN-LAST:event_Keranjang1MouseClicked
+    }
 
     private void Pesan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pesan1MouseClicked
+        ToPesanPage();
+        
+        PageName = PesanWord.getText();
+    }//GEN-LAST:event_Pesan1MouseClicked
+
+    public void ToPesanPage() {
         // TODO add your handling code here:
         AboutUsPane.setVisible(false);
         KeranjangPane.setVisible(false);
@@ -839,11 +857,14 @@ public class ParentPage extends javax.swing.JFrame {
         PesanWord.setForeground(Color.BLACK);
         KeranjangWord.setForeground(new Color(77, 77,77));
         AboutUsWord.setForeground(new Color(77, 77,77));
-        
-        PageName = PesanWord.getText();
-    }//GEN-LAST:event_Pesan1MouseClicked
+    }
 
     private void Home1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Home1MouseClicked
+        ToHomepage();
+        
+    }//GEN-LAST:event_Home1MouseClicked
+
+    public void ToHomepage() {
         // TODO add your handling code here:
         AboutUsPane.setVisible(false);
         KeranjangPane.setVisible(false);
@@ -857,8 +878,7 @@ public class ParentPage extends javax.swing.JFrame {
         PesanWord.setForeground(new Color(77, 77,77));
         KeranjangWord.setForeground(new Color(77, 77,77));
         AboutUsWord.setForeground(new Color(77, 77,77));
-        PageName = "Home";
-    }//GEN-LAST:event_Home1MouseClicked
+    }
 
     private void jLabel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseEntered
         // TODO add your handling code here:
@@ -909,6 +929,21 @@ public class ParentPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         AboutUs1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_AboutUs1MouseReleased
+
+    private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
+        // TODO add your handling code here:
+        ToPesanPage();
+    }//GEN-LAST:event_jPanel9MouseClicked
+
+    private void jPanel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseEntered
+        // TODO add your handling code here:
+        jPanel9.setBackground(new Color(0,102,0));
+    }//GEN-LAST:event_jPanel9MouseEntered
+
+    private void jPanel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseExited
+        // TODO add your handling code here:
+        jPanel9.setBackground(new Color(0,153,0));
+    }//GEN-LAST:event_jPanel9MouseExited
 
     /**
      * @param args the command line arguments
