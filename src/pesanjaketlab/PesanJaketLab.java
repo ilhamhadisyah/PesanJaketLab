@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package pesanjaketlab;
+import pesanjaketlab.changeColor.*;
+
+
 
 /**
  *
@@ -15,13 +18,21 @@ public class PesanJaketLab {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         ParentPage Parent = new ParentPage();
-        Parent.setVisible(true);
         Login login = new Login();
+        Register reg = new Register();
+        //Parent.setVisible(true);
         //login.setVisible(true);
-        //Register reg = new Register();
         //reg.setVisible(true);
-        // TODO code application logic here
+        
+        colorChage cc = new convertNIMToColor();
+        String warna;
+        warna=cc.colorChanger(2018);
+        System.out.println(warna);
+       
+        
+        
     }
     
 }

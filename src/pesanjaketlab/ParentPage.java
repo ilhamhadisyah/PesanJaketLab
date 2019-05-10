@@ -86,7 +86,6 @@ public class ParentPage extends javax.swing.JFrame {
         HomeWord = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 0));
@@ -771,11 +770,6 @@ public class ParentPage extends javax.swing.JFrame {
         Home1.setBackground(Color.WHITE);
     }//GEN-LAST:event_Home1MouseExited
 
-    private void AboutUsPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsPaneMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_AboutUsPaneMouseClicked
-
     private void KeranjangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KeranjangMouseClicked
         // TODO add your handling code here:
         
@@ -930,20 +924,25 @@ public class ParentPage extends javax.swing.JFrame {
         AboutUs1.setBackground(new Color(240,240,240));
     }//GEN-LAST:event_AboutUs1MouseReleased
 
-    private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
+    private void AboutUsPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsPaneMouseClicked
         // TODO add your handling code here:
-        ToPesanPage();
-    }//GEN-LAST:event_jPanel9MouseClicked
+
+    }//GEN-LAST:event_AboutUsPaneMouseClicked
+
+    private void jPanel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseExited
+        // TODO add your handling code here:
+        jPanel9.setBackground(new Color(0,153,0));
+    }//GEN-LAST:event_jPanel9MouseExited
 
     private void jPanel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseEntered
         // TODO add your handling code here:
         jPanel9.setBackground(new Color(0,102,0));
     }//GEN-LAST:event_jPanel9MouseEntered
 
-    private void jPanel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseExited
+    private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
         // TODO add your handling code here:
-        jPanel9.setBackground(new Color(0,153,0));
-    }//GEN-LAST:event_jPanel9MouseExited
+        ToPesanPage();
+    }//GEN-LAST:event_jPanel9MouseClicked
 
     /**
      * @param args the command line arguments
